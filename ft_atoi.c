@@ -14,7 +14,7 @@ int	ft_atoi(const char *nptr)
 {
 	int	num;
 	int	negative;
-	
+
 	num = 0;
 	negative = 1;
 	if (*(nptr++) == '-')
