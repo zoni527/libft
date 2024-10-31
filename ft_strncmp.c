@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 16:10:05 by jvarila           #+#    #+#             */
-/*   Updated: 2024/10/29 16:38:07 by jvarila          ###   ########.fr       */
+/*   Created: 2024/10/31 09:20:15 by jvarila           #+#    #+#             */
+/*   Updated: 2024/10/31 09:30:02 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char	*char_ptr;
-	size_t			i;
+	size_t	i;
 
-	char_ptr = s;
 	i = 0;
 	while (i < n)
-		char_ptr[i++] = c;
-	return (s);
+	{
+		if ((s1[i] == '\0' || s2[i] == '\0') || s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
 }

@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 16:10:05 by jvarila           #+#    #+#             */
-/*   Updated: 2024/10/29 16:38:07 by jvarila          ###   ########.fr       */
+/*   Created: 2024/10/31 10:58:39 by jvarila           #+#    #+#             */
+/*   Updated: 2024/10/31 11:04:01 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
-
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	unsigned char	*char_ptr;
-	size_t			i;
-
-	char_ptr = s;
-	i = 0;
-	while (i < n)
-		char_ptr[i++] = c;
-	return (s);
+	int	num;
+	int	negative;
+	
+	num = 0;
+	negative = 1;
+	if (*(nptr++) == '-')
+		negative = -1;
+	while (*nptr >= '0' && *nptr <= '9')
+		num = num * 10 + *nptr - '0';
+	return (negative * num);
 }
