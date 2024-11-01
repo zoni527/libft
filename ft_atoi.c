@@ -17,9 +17,12 @@ int	ft_atoi(const char *nptr)
 
 	num = 0;
 	negative = 1;
-	if (*(nptr++) == '-')
+	if (*(nptr) == '-')
+	{
 		negative = -1;
+		nptr++;
+	}
 	while (*nptr >= '0' && *nptr <= '9')
-		num = num * 10 + *nptr - '0';
+		num = num * 10 + *(nptr++) - '0';
 	return (negative * num);
 }

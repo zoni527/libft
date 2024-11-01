@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 12:13:08 by jvarila           #+#    #+#             */
-/*   Updated: 2024/11/01 12:30:00 by jvarila          ###   ########.fr       */
+/*   Created: 2024/11/01 16:27:46 by jvarila           #+#    #+#             */
+/*   Updated: 2024/11/01 16:38:24 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*substr;
-	size_t	s_len;
-	size_t	substr_len;
-	size_t	i;
+	char		*str;
+	const char	*right;
+	const char	*left;
 
-	s_len = ft_strlen(s);
-	substr_len = ft_strlen(s + start);
-	substr = malloc(substr_len + 1);
-	if (!substr)
+	if (!*s1)
+		return (ft_calloc(1, 1));
+	left = s1;
+	right = ft_strchr(s1, '\0') - 1;
+	while (ft_strchr(set, *left))
+		left++;
+	while (ft_strrchr(set, *right))
+		right--;
+	if (left >= right)
+		return (ft_calloc(1, 1));
+	str = malloc(left - right + 1);
+	if (!str)
 		return (NULL);
-	i = 0;
-	while (i < substr_len + 1)
-	{
-		substr[i] = (s + start)[i];
-		i++;
-	}
-	return (substr);
+	ft_memcpy(str, left, left - right + 1);
+	return (str);
 }

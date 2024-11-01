@@ -22,11 +22,6 @@ char	*ft_strdup(const char *s)
 	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
-	i = 0;
-	while (i < len + 1)
-	{
-		str[i] = s[i];
-		i++;
-	}
+	ft_memcpy(str, s, len + 1);
 	return (str);
 }

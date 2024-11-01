@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 12:13:08 by jvarila           #+#    #+#             */
-/*   Updated: 2024/11/01 12:30:00 by jvarila          ###   ########.fr       */
+/*   Created: 2024/11/01 18:13:34 by jvarila           #+#    #+#             */
+/*   Updated: 2024/11/01 18:34:20 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	**ft_split(char const *s, char c)
 {
-	char	*substr;
-	size_t	s_len;
-	size_t	substr_len;
+	char	**str_array;
 	size_t	i;
 
-	s_len = ft_strlen(s);
-	substr_len = ft_strlen(s + start);
-	substr = malloc(substr_len + 1);
-	if (!substr)
-		return (NULL);
-	i = 0;
-	while (i < substr_len + 1)
+
+}
+
+size_t	ft_word_count(const char *s, char c)
+{
+	size_t	wc;
+
+	wc = 0;
+	while (*s)
 	{
-		substr[i] = (s + start)[i];
-		i++;
+		if (*s == c)
+		{
+			s++;
+			continue;
+		}
+		wc++;
+		while (*s != c)
+			s++;
 	}
-	return (substr);
+	return (wc);
 }
