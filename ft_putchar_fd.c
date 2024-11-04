@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 16:24:24 by jvarila           #+#    #+#             */
-/*   Updated: 2024/10/29 14:13:50 by jvarila          ###   ########.fr       */
+/*   Created: 2024/11/04 11:34:23 by jvarila           #+#    #+#             */
+/*   Updated: 2024/11/04 11:39:13 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned char	*char_ptr;
-	size_t			i;
-
-	char_ptr = s;
-	i = 0;
-	while (i < n)
-		char_ptr[i++] = 0;
+	write(fd, &c, 1);
 }

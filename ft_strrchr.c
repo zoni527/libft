@@ -14,18 +14,18 @@
 
 char	*strrchr(const char *s, int c)
 {
-	size_t	i;
 	char	*char_position;
+	size_t	i;
 
 	char_position = NULL;
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == c)
-			char_position = s + i;
+			char_position = (char *)(s + i);
 		i++;
 	}
 	if (c == '\0')
-		return (s + i);
+		return ((char *)(s + i));
 	return (char_position);
 }
