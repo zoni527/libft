@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_atoi(const char *nptr)
 {
 	int	num;
@@ -17,12 +19,19 @@ int	ft_atoi(const char *nptr)
 
 	num = 0;
 	negative = 1;
-	if (*(nptr) == '-')
+	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		negative = -1;
+		if (*nptr == '-')
+			negative = -1;
 		nptr++;
 	}
 	while (*nptr >= '0' && *nptr <= '9')
+	{
+		if (num > INT_MAX / 10)
+			return ((num * 10 + *nptr - '0') % 2 * negative);
 		num = num * 10 + *(nptr++) - '0';
+	}
 	return (negative * num);
 }
