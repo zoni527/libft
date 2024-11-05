@@ -33,10 +33,10 @@ int	ft_atoi(const char *nptr)
 	}
 	if ((ul_num > LONG_MAX && sign > 0)
 		|| (significant_digits > 19 && sign > 0))
-		return (-1);
-	if ((ul_num > (unsigned long )LONG_MIN && sign < 0)
+		return ((int)LONG_MAX);
+	if ((ul_num > (unsigned long)LONG_MIN && sign < 0)
 		|| (significant_digits > 19 && sign < 0))
-		return (0);
+		return ((int)LONG_MIN);
 	return (sign * num);
 }
 
