@@ -12,26 +12,47 @@
 
 #include "libft.h"
 
+static int	skip_to_significant_digits(const char **pointer_to_numeric_string);
+
 int	ft_atoi(const char *nptr)
 {
-	int	num;
-	int	negative;
+	int				num;
+	unsigned long	ul_num;
+	int				sign;
+	size_t			significant_digits;
 
 	num = 0;
-	negative = 1;
-	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
-	{
-		if (*nptr == '-')
-			negative = -1;
-		nptr++;
-	}
+	ul_num = 0;
+	significant_digits = 0;
+	sign = skip_to_significant_digits(&nptr);
 	while (*nptr >= '0' && *nptr <= '9')
 	{
-		if (num > INT_MAX / 10)
-			return ((num * 10 + *nptr - '0') % 2 * negative);
+		significant_digits++;
+		ul_num = ul_num * 10 + *(nptr) - '0';
 		num = num * 10 + *(nptr++) - '0';
 	}
-	return (negative * num);
+	if ((ul_num > LONG_MAX && sign > 0)
+		|| (significant_digits > 19 && sign > 0))
+		return (-1);
+	if ((ul_num > (unsigned long )LONG_MIN && sign < 0)
+		|| (significant_digits > 19 && sign < 0))
+		return (0);
+	return (sign * num);
+}
+
+static int	skip_to_significant_digits(const char **pointer_to_numeric_string)
+{
+	const char	**nptr;
+	int			sign;
+
+	nptr = pointer_to_numeric_string;
+	sign = 1;
+	while (**nptr == 32 || (**nptr >= 9 && **nptr <= 13))
+		(*nptr)++;
+	if (**nptr == '-' || **nptr == '+')
+		if (*((*nptr)++) == '-')
+			sign = -1;
+	while (**nptr == 0)
+		(*nptr)++;
+	return (sign);
 }
