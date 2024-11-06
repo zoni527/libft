@@ -11,12 +11,14 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*str;
 	const char	*right;
 	const char	*left;
+	size_t		len;
 
 	if (!*s1)
 		return (ft_calloc(1, 1));
@@ -28,9 +30,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		right--;
 	if (left >= right)
 		return (ft_calloc(1, 1));
-	str = malloc(left - right + 1);
+	len = ft_strlen(left) - ft_strlen(++right);
+	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	ft_memcpy(str, left, left - right + 1);
+	ft_strlcpy(str, left, len + 1);
 	return (str);
 }

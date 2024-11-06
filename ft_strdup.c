@@ -18,9 +18,9 @@ char	*ft_strdup(const char *s)
 	size_t	len;
 
 	len = ft_strlen(s);
-	str = malloc(len + 1);
+	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	ft_memcpy(str, s, len + 1);
+	ft_memcpy(str, s, (len + 1) * sizeof (char));
 	return (str);
 }

@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	combined_len;
 
 	combined_len = ft_strlen(s1) + ft_strlen(s2);
-	joined_str = malloc(combined_len + 1);
+	joined_str = malloc((combined_len + 1) * sizeof(char));
 	if (!joined_str)
 		return (NULL);
 	joined_str[0] = '\0';
