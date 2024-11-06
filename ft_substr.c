@@ -17,18 +17,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 	size_t	s_len;
 	size_t	substr_len;
-	size_t	i;
 
 	s_len = ft_strlen(s);
-	substr_len = ft_strlen(s + start);
+	if (start >= s_len)
+		return ((char *)ft_calloc(1, 1));
+	else
+		substr_len = ft_strlen(s + start);
+	if (substr_len > len)
+		substr_len = len;
 	substr = malloc(substr_len + 1);
 	if (!substr)
 		return (NULL);
-	i = 0;
-	while (i < substr_len + 1)
-	{
-		substr[i] = (s + start)[i];
-		i++;
-	}
+	ft_strlcpy(substr, s + start, substr_len + 1);
 	return (substr);
 }
