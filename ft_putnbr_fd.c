@@ -12,10 +12,27 @@
 
 #include "libft.h"
 
+static	void	ft_recursive_putnbr_fd(long n, int fd);
+
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
+	ft_recursive_putnbr_fd(n, fd);
+}
 
-	str = ft_itoa(n);
-	ft_putstr_fd(str, fd);
+static	void	ft_recursive_putnbr_fd(long n, int fd)
+{
+	int		mod;
+	char	c;
+
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		ft_recursive_putnbr_fd(-n, fd);
+		return ;
+	}
+	if (n >= 10)
+		ft_recursive_putnbr_fd(n / 10, fd);
+	mod = n % 10;
+	c = mod + '0';
+	write(fd, &c, 1);
 }
