@@ -6,7 +6,7 @@
 #    By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:58:04 by jvarila           #+#    #+#              #
-#    Updated: 2024/11/07 17:11:44 by jvarila          ###   ########.fr        #
+#    Updated: 2024/11/11 15:58:10 by jvarila          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 HF = libft.h
-AR = ar rcs
+AR = ar -crs
 
 SRC =		ft_isalpha.c	\
 		ft_isdigit.c	\
@@ -82,7 +82,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
