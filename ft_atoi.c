@@ -21,7 +21,7 @@ int	ft_atoi(const char *nptr)
 	int				sign;
 	size_t			significant_digits;
 
-	if (!nptr || !*nptr)
+	if (!*nptr)
 		return (0);
 	num = 0;
 	ul_num = 0;

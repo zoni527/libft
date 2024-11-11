@@ -13,30 +13,28 @@
 #include "libft.h"
 
 static size_t		ft_word_count(const char *s, char c);
-static const char	*ft_skip_over_char(const char *str, char c);
+static const char	*ft_skip_over_char(const char *s, char c);
 static char			**ft_free_array(char **array, size_t len);
-static size_t		ft_len_till_c(const char *str, char c);
+static size_t		ft_len_till_c(const char *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
 	char		**str_array;
-	const char	*str;
 	size_t		word_count;
 	size_t		i;
 
-	str = s;
-	word_count = ft_word_count(str, c);
+	word_count = ft_word_count(s, c);
 	str_array = malloc((word_count + 1) * sizeof(char *));
 	if (str_array == NULL)
 		return (NULL);
 	i = 0;
 	while (i < word_count)
 	{
-		str = ft_skip_over_char(str, c);
-		str_array[i] = ft_substr(str, 0, ft_len_till_c(str, c));
+		s = ft_skip_over_char(s, c);
+		str_array[i] = ft_substr(s, 0, ft_len_till_c(s, c));
 		if (!str_array[i])
 			return (ft_free_array(str_array, i));
-		str = ft_strchr(str, c);
+		s = ft_strchr(s, c);
 		i++;
 	}
 	str_array[i] = NULL;
@@ -61,21 +59,21 @@ static size_t	ft_word_count(const char *s, char c)
 	return (wc);
 }
 
-static size_t	ft_len_till_c(const char *str, char c)
+static size_t	ft_len_till_c(const char *s, char c)
 {
 	size_t	len;
 
 	len = 0;
-	while (str[len] && str[len] != c)
+	while (s[len] && s[len] != c)
 		len++;
 	return (len);
 }
 
-static const char	*ft_skip_over_char(const char *str, char c)
+static const char	*ft_skip_over_char(const char *s, char c)
 {
-	while (*str && *str == c)
-		str++;
-	return (str);
+	while (*s && *s == c)
+		s++;
+	return (s);
 }
 
 static char	**ft_free_array(char **array, size_t len)
