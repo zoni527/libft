@@ -6,7 +6,7 @@
 #    By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:58:04 by jvarila           #+#    #+#              #
-#    Updated: 2024/11/11 15:58:10 by jvarila          ###   ########.fr        #
+#    Updated: 2024/11/12 11:26:51 by jvarila          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,8 +72,11 @@ $(NAME): $(OBJ) $(HF)
 
 .PHONY: clean fclean re bonus
 
-bonus: $(OBJ) $(BONUSOBJ) $(HF)
+bonus: .bonus
+
+.bonus: $(OBJ) $(BONUSOBJ) $(HF)
 	$(AR) $(NAME) $(OBJ) $(BONUSOBJ)
+	@touch .bonus
 
 clean:
 	rm -f $(OBJ) $(BONUSOBJ)
