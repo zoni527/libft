@@ -54,7 +54,7 @@ static int	skip_to_significant_digits(const char **pointer_to_numeric_string)
 	if (**nptr == '-' || **nptr == '+')
 		if (*((*nptr)++) == '-')
 			sign = -1;
-	while (**nptr == 0)
+	while (**nptr == '0')
 		(*nptr)++;
 	return (sign);
 }
