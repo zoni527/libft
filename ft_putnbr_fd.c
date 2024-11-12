@@ -6,7 +6,7 @@
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:51:40 by jvarila           #+#    #+#             */
-/*   Updated: 2024/11/04 11:53:19 by jvarila          ###   ########.fr       */
+/*   Updated: 2024/11/12 12:48:52 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_putnbr_fd(int n, int fd)
 
 static	void	ft_recursive_putnbr_fd(long n, int fd)
 {
-	int		mod;
 	char	c;
 
 	if (n < 0)
@@ -32,7 +31,6 @@ static	void	ft_recursive_putnbr_fd(long n, int fd)
 	}
 	if (n >= 10)
 		ft_recursive_putnbr_fd(n / 10, fd);
-	mod = n % 10;
-	c = mod + '0';
+	c = n % 10 + '0';
 	write(fd, &c, 1);
 }
