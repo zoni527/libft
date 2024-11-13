@@ -28,7 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		left++;
 	while (ft_strrchr(set, *right))
 		right--;
-	if (left >= right)
+	if (left > right)
 		return ((char *)ft_calloc(1, sizeof(char)));
 	len = ft_strlen(left) - ft_strlen(++right);
 	str = malloc((len + 1) * sizeof(char));
