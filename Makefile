@@ -70,8 +70,6 @@ all: $(NAME)
 $(NAME): $(OBJ) $(HF)
 	$(AR) $(NAME) $(OBJ)
 
-.PHONY: clean fclean re bonus
-
 bonus: .bonus
 
 .bonus: $(OBJ) $(BONUSOBJ) $(HF)
@@ -85,3 +83,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: clean fclean re bonus
