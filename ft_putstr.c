@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 11:51:40 by jvarila           #+#    #+#             */
-/*   Updated: 2024/11/12 12:48:52 by jvarila          ###   ########.fr       */
+/*   Created: 2024/11/04 11:39:32 by jvarila           #+#    #+#             */
+/*   Updated: 2024/11/15 13:10:35 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-int	ft_putnbr_fd(int n, int fd)
+int	ft_putstr(char *s)
 {
-	char	c;
-	int		counter;
-
-	if (n == INT_MIN)
-		return (write(1, "-2147483648", 11));
-	counter = 0;
-	if (n < 0)
-	{
-		counter += write(fd, "-", 1);
-		return(counter + ft_putnbr_fd(-n, fd));
-	}
-	if (n >= 10)
-		counter += ft_putnbr_fd(n / 10, fd);
-	c = n % 10 + '0';
-	counter += write(fd, &c, 1);
-	return (counter);
+	return (write(STDOUT_FILENO, s, ft_strlen(s)));
 }
