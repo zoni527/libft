@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(const char *s, int fd)
 {
 	int	counter;
 
