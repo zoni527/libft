@@ -35,10 +35,10 @@ static int	validate_base(const char *base)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	j = 0;
-	while(base[i])
+	while (base[i])
 	{
 		if (base[i] == '-' || base[i] == '+')
 			return (-1);

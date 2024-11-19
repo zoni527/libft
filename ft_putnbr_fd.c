@@ -23,7 +23,7 @@ int	ft_putnbr_fd(int n, int fd)
 	if (n < 0)
 	{
 		counter += write(fd, "-", 1);
-		return(counter + ft_putnbr_fd(-n, fd));
+		return (counter + ft_putnbr_fd(-n, fd));
 	}
 	if (n >= 10)
 		counter += ft_putnbr_fd(n / 10, fd);
