@@ -16,18 +16,25 @@ int	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
 	int		counter;
+	int		rval;
 
 	if (n == INT_MIN)
 		return (write(1, "-2147483648", 11));
 	counter = 0;
 	if (n < 0)
 	{
-		counter += write(fd, "-", 1);
+		rval = write(fd, "-", 1);
+		if (rval < 0)
+			return (-1);
+		counter += rval;
 		return (counter + ft_putnbr_fd(-n, fd));
 	}
 	if (n >= 10)
 		counter += ft_putnbr_fd(n / 10, fd);
 	c = n % 10 + '0';
-	counter += write(fd, &c, 1);
+	rval = write(fd, &c, 1);
+	if (rval < 0)
+		return (-1);
+	counter += rval;
 	return (counter);
 }
