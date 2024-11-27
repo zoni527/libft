@@ -14,27 +14,13 @@
 
 int	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
-	int		counter;
-	int		rval;
+	char	*num_string;
+	int		characters_written;
 
-	if (n == INT_MIN)
-		return (write(1, "-2147483648", 11));
-	counter = 0;
-	if (n < 0)
-	{
-		rval = write(fd, "-", 1);
-		if (rval < 0)
-			return (-1);
-		counter += rval;
-		return (counter + ft_putnbr_fd(-n, fd));
-	}
-	if (n >= 10)
-		counter += ft_putnbr_fd(n / 10, fd);
-	c = n % 10 + '0';
-	rval = write(fd, &c, 1);
-	if (rval < 0)
+	num_string = ft_itoa(n);
+	if (!num_string)
 		return (-1);
-	counter += rval;
-	return (counter);
+	characters_written = ft_putstr(num_string);
+	free(num_string);
+	return (characters_written);
 }
