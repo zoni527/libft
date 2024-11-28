@@ -16,6 +16,14 @@
 # include <unistd.h>
 # include <limits.h>
 
+# ifndef HEX_BASE_LOWER_CASE
+#  define HEX_BASE_LOWER_CASE "0123456789abcdef"
+# endif
+
+# ifndef HEX_BASE_UPPER_CASE
+#  define HEX_BASE_UPPER_CASE "0123456789ABCDEF"
+# endif
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
