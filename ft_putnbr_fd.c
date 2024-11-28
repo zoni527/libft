@@ -20,7 +20,7 @@ int	ft_putnbr_fd(int n, int fd)
 	num_string = ft_itoa(n);
 	if (!num_string)
 		return (-1);
-	characters_written = ft_putstr(num_string);
+	characters_written = ft_putstr_fd(num_string, fd);
 	free(num_string);
 	return (characters_written);
 }
