@@ -43,7 +43,7 @@ char	*ft_itoa(int n)
 		str[str_len] = (n % 10) * sign + '0';
 		n /= 10;
 	}
-	if (n < 0)
+	if (sign < 0)
 		str[0] = '-';
 	else
 		str[0] = (n % 10) * sign + '0';
