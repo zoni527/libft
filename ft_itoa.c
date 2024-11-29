@@ -25,26 +25,27 @@ char	*ft_itoa(int n)
 {
 	char	*str;
 	int		str_len;
-	long	n_temp;
+	int		sign;
 
 	str_len = ft_int_digits(n);
+	sign = 1;
 	if (n < 0)
+	{
 		str_len++;
+		sign = -1;
+	}
 	str = malloc((str_len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	str[str_len] = '\0';
-	n_temp = (long)n;
-	if (n < 0)
-		n_temp *= -1;
 	while (--str_len)
 	{
-		str[str_len] = n_temp % 10 + '0';
-		n_temp /= 10;
+		str[str_len] = (n % 10) * sign + '0';
+		n /= 10;
 	}
 	if (n < 0)
 		str[0] = '-';
 	else
-		str[0] = n_temp % 10 + '0';
+		str[0] = (n % 10) * sign + '0';
 	return (str);
 }

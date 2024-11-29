@@ -103,5 +103,6 @@ int		ft_int_digits(int n);
 int		ft_long_digits(long int n);
 int		ft_uint_digits(unsigned int n);
 int		ft_ulong_digits(unsigned long n);
+int		ft_ulong_hex_digits(unsigned long n);
 
 #endif

@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hextoa.c                                        :+:      :+:    :+:   */
+/*   ft_ulong_hex_digits.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 09:19:54 by jvarila           #+#    #+#             */
-/*   Updated: 2024/11/28 15:04:38 by jvarila          ###   ########.fr       */
+/*   Created: 2024/11/29 09:09:21 by jvarila           #+#    #+#             */
+/*   Updated: 2024/11/29 09:11:42 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_hextoa(unsigned long n, unsigned char mode)
+int	ft_ulong_hex_digits(unsigned long n)
 {
-	char	*str;
-	char	*lookup;
-	size_t	str_len;
-	int		mod;
+	int	digits;
 
-	if (mode == 'X')
-		lookup = "0123456789ABCDEF";
-	else
-		lookup = "0123456789abcdef";
-	str_len = ft_ulong_hex_digits(n);
-	str = malloc((str_len + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	str[str_len] = '\0';
-	while (str_len--)
+	if (n == 0)
+		return (1);
+	digits = 0;
+	while (n != 0)
 	{
-		mod = n % 16;
-		str[str_len] = lookup[mod];
+		digits++;
 		n /= 16;
 	}
-	return (str);
+	return (digits);
 }
