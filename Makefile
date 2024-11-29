@@ -34,7 +34,8 @@ SRC =	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c	ft_isascii.c	\
 	ft_putnbr_base.c	\
 	ft_longtoa.c	ft_hextoa.c	ft_utoa.c	ft_ulongtoa.c	\
 	ft_int_digits.c	ft_ulong_digits.c	ft_uint_digits.c	\
-	ft_ulong_digits.c	ft_ulong_hex_digits.c
+	ft_ulong_digits.c	ft_ulong_hex_digits.c	\
+	ft_free_ptr_return_int.c
 
 OBJ = $(SRC:.c=.o)
 

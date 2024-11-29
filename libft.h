@@ -105,4 +105,6 @@ int		ft_uint_digits(unsigned int n);
 int		ft_ulong_digits(unsigned long n);
 int		ft_ulong_hex_digits(unsigned long n);
 
+int		ft_free_ptr_return_int(void **ptr_to_ptr, int i);
+
 #endif
