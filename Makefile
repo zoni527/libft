@@ -57,6 +57,8 @@ all: $(NAME)
 $(NAME): $(OBJ) $(HF)
 	$(AR) $(NAME) $(OBJ)
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@ -g
 clean:
 	rm -f $(OBJ)
 
