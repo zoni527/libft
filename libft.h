@@ -158,5 +158,6 @@ int			handle_hex_lowercase(const char **format_str_ptr, va_list ap);
 int			handle_hex_uppercase(const char **format_str_ptr, va_list ap);
 
 int			isnumstr(const char *str);
+int			word_count(const char *str);
 
 #endif
