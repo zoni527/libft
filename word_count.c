@@ -22,7 +22,10 @@ int	word_count(const char *str)
 	while (*str != '\0')
 	{
 		if (*str == ' ' || (*str >= 9 && *str <= 13))
+		{
 			str++;
+			continue;
+		}
 		wc++;
 		while (!(*str == ' ' || (*str >= 9 && *str <= 13)))
 			str++;
