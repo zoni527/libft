@@ -17,6 +17,8 @@ void	free_split(char ***words_ptr)
 	char	**words;
 
 	words = *words_ptr;
+	if (!words)
+		return ;
 	while (*words)
 		free(*(words++));
 	free(*words_ptr);
