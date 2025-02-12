@@ -184,5 +184,6 @@ unsigned int	atou_base(const char *str, const char *base);
 unsigned int	atohex(const char *str);
 
 int				count_char(const char *str, int c);
+void			replace_char(char *str, int c1, int c2);
 
 #endif
