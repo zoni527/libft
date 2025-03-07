@@ -14,7 +14,6 @@
 
 int	write_error_return_int(char *error_message, int return_value)
 {
-	ft_putstr_fd(error_message, STDERR_FILENO);
-	ft_putchar('\n');
+	ft_putendl_fd(error_message, STDERR_FILENO);
 	return (return_value);
 }

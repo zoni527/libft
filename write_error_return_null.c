@@ -14,6 +14,6 @@
 
 void	*write_error_return_null(char *error_message)
 {
-	ft_putstr_fd(error_message, STDERR_FILENO);
+	ft_putendl_fd(error_message, STDERR_FILENO);
 	return (NULL);
 }
