@@ -6,7 +6,7 @@
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:42:55 by jvarila           #+#    #+#             */
-/*   Updated: 2025/01/20 11:55:11 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/03/12 15:04:37 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int				ft_isdigit(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
+int				ft_isspace(int c);
 
 int				ft_islower(int c);
 int				ft_isupper(int c);
