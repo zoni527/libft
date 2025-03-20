@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contains_duplicate_char.c                          :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 11:13:30 by jvarila           #+#    #+#             */
-/*   Updated: 2025/01/20 11:13:50 by jvarila          ###   ########.fr       */
+/*   Created: 2025/01/30 11:49:57 by jvarila           #+#    #+#             */
+/*   Updated: 2025/03/20 12:18:00 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	contains_duplicate_char(const char *str)
+void	ft_free_split(char ***words_ptr)
 {
-	if (!str)
-		return (0);
-	while (*str)
-	{
-		if (ft_strchr(str + 1, *str))
-			return (1);
-		str++;
-	}
-	return (0);
+	char	**words;
+
+	words = *words_ptr;
+	if (!words)
+		return ;
+	while (*words)
+		free(*(words++));
+	free(*words_ptr);
+	*words_ptr = NULL;
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace_char.c                                     :+:      :+:    :+:   */
+/*   ft_replace_char.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 09:38:41 by jvarila           #+#    #+#             */
-/*   Updated: 2025/02/12 09:40:32 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/03/20 15:56:33 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	replace_char(char *str, int c1, int c2)
+void	ft_replace_char(char *str, int c1, int c2)
 {
 	while (*str)
 	{

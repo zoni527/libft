@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_null_ended_array_return_int.c                 :+:      :+:    :+:   */
+/*   ft_count_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 14:02:38 by jvarila           #+#    #+#             */
-/*   Updated: 2024/12/20 10:56:03 by jvarila          ###   ########.fr       */
+/*   Created: 2025/02/11 14:28:30 by jvarila           #+#    #+#             */
+/*   Updated: 2025/03/20 15:58:09 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	free_null_ended_array_return_int(void ***ptr_to_array, int num)
+int	ft_count_char(const char *str, int c)
 {
-	free_null_ended_array(ptr_to_array);
-	return (num);
+	int	count;
+
+	if (!str)
+		return (-1);
+	count = 0;
+	while (*str)
+		if (*(str++) == c)
+			count++;
+	return (count);
 }

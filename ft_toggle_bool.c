@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_char.c                                       :+:      :+:    :+:   */
+/*   ft_toggle_bool.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 14:28:30 by jvarila           #+#    #+#             */
-/*   Updated: 2025/02/11 14:28:46 by jvarila          ###   ########.fr       */
+/*   Created: 2025/03/20 11:35:08 by jvarila           #+#    #+#             */
+/*   Updated: 2025/03/20 11:53:13 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_char(const char *str, int c)
+void	ft_toggle_bool(bool *value)
 {
-	int	count;
-
-	if (!str)
-		return (-1);
-	count = 0;
-	while (*str)
-		if (*(str++) == c)
-			count++;
-	return (count);
+	if (*value == true)
+		*value = false;
+	else
+		*value = true;
 }

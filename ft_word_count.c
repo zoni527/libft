@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_ptr_return_int.c                              :+:      :+:    :+:   */
+/*   ft_word_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/29 09:52:18 by jvarila           #+#    #+#             */
-/*   Updated: 2024/12/19 14:11:39 by jvarila          ###   ########.fr       */
+/*   Created: 2024/12/27 10:42:36 by jvarila           #+#    #+#             */
+/*   Updated: 2025/03/20 12:21:20 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	free_ptr_return_int(void **ptr_to_ptr, int i)
+int	ft_word_count(const char *str)
 {
-	free(*ptr_to_ptr);
-	*ptr_to_ptr = NULL;
-	return (i);
+	int	wc;
+
+	if (!*str)
+		return (0);
+	wc = 0;
+	while (*str)
+	{
+		if (*str == ' ' || (*str >= 9 && *str <= 13))
+		{
+			str++;
+			continue ;
+		}
+		wc++;
+		while (*str && !(*str == ' ' || (*str >= 9 && *str <= 13)))
+			str++;
+	}
+	return (wc);
 }

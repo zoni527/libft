@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_split.c                                       :+:      :+:    :+:   */
+/*   ft_skip_whitespace.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 11:49:57 by jvarila           #+#    #+#             */
-/*   Updated: 2025/01/30 11:52:27 by jvarila          ###   ########.fr       */
+/*   Created: 2024/12/27 11:27:47 by jvarila           #+#    #+#             */
+/*   Updated: 2025/03/20 12:22:00 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_split(char ***words_ptr)
+char	*ft_skip_whitespace(const char *str)
 {
-	char	**words;
-
-	words = *words_ptr;
-	if (!words)
-		return ;
-	while (*words)
-		free(*(words++));
-	free(*words_ptr);
-	*words_ptr = NULL;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	return ((char *)str);
 }

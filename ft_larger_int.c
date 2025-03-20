@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_null_ended_array_return_null.c                :+:      :+:    :+:   */
+/*   ft_larger_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 14:02:38 by jvarila           #+#    #+#             */
-/*   Updated: 2024/12/20 10:58:03 by jvarila          ###   ########.fr       */
+/*   Created: 2025/01/03 09:42:35 by jvarila           #+#    #+#             */
+/*   Updated: 2025/03/20 12:22:43 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*free_null_ended_array_return_null(void ***ptr_to_array)
+int	ft_larger_int(int a, int b)
 {
-	free_null_ended_array(ptr_to_array);
-	return (NULL);
+	if (a == b)
+		return (a);
+	return ((a > b) * a + (b > a) * b);
 }

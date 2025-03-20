@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_int_larger.c                                 :+:      :+:    :+:   */
+/*   ft_first_int_larger.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:02:10 by jvarila           #+#    #+#             */
-/*   Updated: 2025/01/09 15:02:44 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/03/20 12:26:00 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	first_int_larger(int a, int b)
+int	ft_first_int_larger(int a, int b)
 {
 	return (a > b);
 }

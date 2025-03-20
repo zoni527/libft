@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   skip_whitespace.c                                  :+:      :+:    :+:   */
+/*   ft_contains_duplicate_char.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/27 11:27:47 by jvarila           #+#    #+#             */
-/*   Updated: 2024/12/27 11:29:28 by jvarila          ###   ########.fr       */
+/*   Created: 2025/01/20 11:13:30 by jvarila           #+#    #+#             */
+/*   Updated: 2025/03/20 12:18:56 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*skip_whitespace(const char *str)
+int	ft_contains_duplicate_char(const char *str)
 {
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
+	if (!str)
+		return (0);
+	while (*str)
+	{
+		if (ft_strchr(str + 1, *str))
+			return (1);
 		str++;
-	return ((char *)str);
+	}
+	return (0);
 }
