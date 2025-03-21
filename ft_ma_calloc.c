@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memarena_calloc.c                               :+:      :+:    :+:   */
+/*   ft_ma_calloc.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,21 +13,23 @@
 #include "libft.h"
 
 /**
- * Used like malloc, returns a pointer that is pointing to memory that
+ * Used like calloc, returns a pointer that is pointing to memory that
  * is inside the memory arena's preallocated pool of heap memory.
  * <p>
- * If no memory is available functino return NULL.
+ * If no memory is available function returns NULL
  *
  * @param arena	Pointer to primary memarena node
  * @param nmemb	Number of elements to allocate space for
  * @param size	Size of elements to accolate space for
  */
-void	*ft_memarena_malloc(t_memarena *arena, size_t bytes_required)
+void	*ft_ma_calloc(t_memarena *arena, size_t nmemb, size_t size)
 {
 	t_memarena	*initial_arena;
 	void		*ptr;
+	size_t		bytes_required;
 	size_t		bytes_available;
 
+	bytes_required = nmemb * size;
 	if (bytes_required <= 0)
 		return (NULL);
 	if (bytes_required > arena->capacity)
@@ -45,5 +47,6 @@ void	*ft_memarena_malloc(t_memarena *arena, size_t bytes_required)
 	}
 	ptr = arena->heap_memory + arena->bytes_used;
 	arena->bytes_used += bytes_required;
+	ft_memset(ptr, 0, bytes_required);
 	return (ptr);
 }

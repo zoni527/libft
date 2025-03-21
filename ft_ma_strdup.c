@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memarena_strdup.c                               :+:      :+:    :+:   */
+/*   ft_ma_strdup.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-char	*ft_memarena_strdup(t_memarena *arena, const char *s)
+char	*ft_ma_strdup(t_memarena *arena, const char *s)
 {
 	char	*str;
 	size_t	len;
 
 	len = ft_strlen(s);
-	str = ft_memarena_malloc(arena, (len + 1) * sizeof(char));
+	str = ft_ma_malloc(arena, (len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	ft_memcpy(str, s, (len + 1) * sizeof (char));

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memarena_strjoin.c                              :+:      :+:    :+:   */
+/*   ft_ma_strjoin.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-char	*ft_memarena_strjoin(t_memarena *arena, char const *s1, char const *s2)
+char	*ft_ma_strjoin(t_memarena *arena, char const *s1, char const *s2)
 {
 	char	*joined_str;
 	size_t	combined_len;
 
 	combined_len = ft_strlen(s1) + ft_strlen(s2);
-	joined_str = ft_memarena_malloc(arena, (combined_len + 1) * sizeof(char));
+	joined_str = ft_ma_malloc(arena, (combined_len + 1) * sizeof(char));
 	if (!joined_str)
 		return (NULL);
 	joined_str[0] = '\0';

@@ -267,20 +267,19 @@ typedef struct s_memarena {
 }	t_memarena;
 
 void			*ft_new_memarena(void);
-void			*ft_memarena_malloc(t_memarena *arena, size_t bytes_required);
-void			*ft_memarena_calloc(t_memarena *arena, size_t nmemb, \
-							size_t size);
+void			*ft_ma_malloc(t_memarena *arena, size_t bytes_required);
+void			*ft_ma_calloc(t_memarena *arena, size_t nmemb, size_t size);
 void			ft_free_memarena_exit(t_memarena *arena, const char *msg);
 void			*ft_free_memarena(t_memarena *arena);
 void			ft_reset_memarena(t_memarena *arena);
-void			*ft_memarena_malloc(t_memarena *arena, size_t bytes_required);
+void			*ft_ma_malloc(t_memarena *arena, size_t bytes_required);
 
-char			*ft_memarena_strjoin(t_memarena *arena, char const *s1, \
+char			*ft_ma_strjoin(t_memarena *arena, char const *s1, \
 							char const *s2);
-char			*ft_memarena_strdup(t_memarena *arena, const char *s);
-char			*ft_memarena_substr(t_memarena *arena, char const *s, \
+char			*ft_ma_strdup(t_memarena *arena, const char *s);
+char			*ft_ma_substr(t_memarena *arena, char const *s, \
 								unsigned int start, size_t len);
-char			**ft_memarena_split(t_memarena *arena, char const *s, char c);
+char			**ft_ma_split(t_memarena *arena, char const *s, char c);
 
 /* -------------------------------------------------------------------------- */
 
