@@ -6,7 +6,7 @@
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:42:55 by jvarila           #+#    #+#             */
-/*   Updated: 2025/03/12 15:04:37 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/03/21 12:02:07 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,17 +234,54 @@ char			*ft_ulongtoa(unsigned long n);
 
 void			ft_free_split(char ***words_ptr);
 
-/* ---------------------------------- Math -----------------------------------*/
+/* ---------------------------------- Math ---------------------------------- */
 
 int				ft_iabs(int num);
 
-/* --------------------------------- Chars -----------------------------------*/
+/* --------------------------------- Chars ---------------------------------- */
 
 int				ft_islower(int c);
 int				ft_isupper(int c);
 
-/* --------------------------------- Bools -----------------------------------*/
+/* --------------------------------- Bools ---------------------------------- */
 
 void			ft_toggle_bool(bool *value);
+
+/* ================================ MEMARENA ================================ */
+
+// Default size is 10 MiB (1024^2)
+# define MEM_ARENA_SIZE	1048576
+
+# define MSG_ERROR_ALLOC	"ERROR: couldn't alloc"
+# define MSG_ERROR_CAPACITY	"ERROR: requested memory chunk is too large"
+
+# define ERROR_ALLOC	2
+
+typedef struct s_memarena	t_memarena;
+
+typedef struct s_memarena {
+	size_t		capacity;
+	size_t		bytes_used;
+	void		*heap_memory;
+	t_memarena	*next;
+}	t_memarena;
+
+void			*ft_new_memarena(void);
+void			*ft_memarena_malloc(t_memarena *arena, size_t bytes_required);
+void			*ft_memarena_calloc(t_memarena *arena, size_t nmemb, \
+							size_t size);
+void			ft_free_memarena_exit(t_memarena *arena, const char *msg);
+void			*ft_free_memarena(t_memarena *arena);
+void			ft_reset_memarena(t_memarena *arena);
+void			*ft_memarena_malloc(t_memarena *arena, size_t bytes_required);
+
+char			*ft_memarena_strjoin(t_memarena *arena, char const *s1, \
+							char const *s2);
+char			*ft_memarena_strdup(t_memarena *arena, const char *s);
+char			*ft_memarena_substr(t_memarena *arena, char const *s, \
+								unsigned int start, size_t len);
+char			**ft_memarena_split(t_memarena *arena, char const *s, char c);
+
+/* -------------------------------------------------------------------------- */
 
 #endif
