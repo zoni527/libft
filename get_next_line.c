@@ -45,7 +45,7 @@ char	*get_next_line(int fd)
 		if (buffer->eof && buffer->unflushed_bytes == 0)
 		{
 			if (line == NULL)
-				ft_memset(buffer, 0, sizeof(t_buffer));
+				ft_bzero(buffer, sizeof(t_buffer));
 			return (line);
 		}
 		line = flush_and_combine(buffer, buffer->unflushed_bytes, line);

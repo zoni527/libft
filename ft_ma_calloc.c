@@ -47,6 +47,6 @@ void	*ft_ma_calloc(t_memarena *arena, size_t nmemb, size_t size)
 	}
 	ptr = arena->heap_memory + arena->bytes_used;
 	arena->bytes_used += bytes_required;
-	ft_memset(ptr, 0, bytes_required);
+	ft_bzero(ptr, bytes_required);
 	return (ptr);
 }
