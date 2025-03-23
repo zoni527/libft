@@ -100,6 +100,8 @@ SRC :=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c	ft_isascii.c \
 	\
 	ft_toggle_bool.c \
 	\
+	ft_realloc.c \
+	\
 	ft_new_memarena.c	ft_ma_malloc.c		ft_ma_calloc.c		\
 	ft_free_memarena_exit.c	ft_free_memarena.c	ft_reset_memarena.c	\
 	\

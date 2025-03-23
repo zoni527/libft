@@ -247,6 +247,10 @@ int				ft_isupper(int c);
 
 void			ft_toggle_bool(bool *value);
 
+/* --------------------------------- Memory --------------------------------- */
+
+void			*ft_realloc(void *src, size_t size_old, size_t size_new);
+
 /* ================================ MEMARENA ================================ */
 
 // Default size is 10 MiB (1024^2)
