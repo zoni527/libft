@@ -17,7 +17,7 @@
  * <p>
  * Return NULL if malloc can't return heap memory.
  */
-void	*new_memarena(void)
+void	*ft_new_memarena(void)
 {
 	t_memarena	*arena;
 

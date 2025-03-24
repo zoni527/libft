@@ -18,7 +18,7 @@
  * @param arena	Pointer to primary memarena node
  * @param msg	Error message to print before exit
  */
-void	free_memarena_exit(t_memarena *arena, const char *msg)
+void	ft_free_memarena_exit(t_memarena *arena, const char *msg)
 {
 	ft_putendl_fd(msg, STDERR_FILENO);
 	ft_free_memarena(arena);
