@@ -263,7 +263,8 @@ void			*ft_realloc(void *src, size_t size_old, size_t size_new);
 
 typedef struct s_memarena	t_memarena;
 
-typedef struct s_memarena {
+typedef struct s_memarena
+{
 	size_t		capacity;
 	size_t		bytes_used;
 	void		*heap_memory;
