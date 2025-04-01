@@ -6,7 +6,7 @@
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:42:55 by jvarila           #+#    #+#             */
-/*   Updated: 2025/03/21 12:02:07 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/04/01 10:59:14 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -254,12 +254,20 @@ void			*ft_realloc(void *src, size_t size_old, size_t size_new);
 /* ================================ MEMARENA ================================ */
 
 // Default size is 10 MiB (1024^2)
-# define MEM_ARENA_SIZE	1048576
+# ifndef MEM_ARENA_SIZE
+#  define MEM_ARENA_SIZE	1048576
+# endif
 
 # define MSG_ERROR_ALLOC	"ERROR: couldn't alloc"
 # define MSG_ERROR_CAPACITY	"ERROR: requested memory chunk is too large"
 
-# define ERROR_ALLOC	2
+# ifndef ERROR_ALLOC
+#  define ERROR_ALLOC		2
+# endif
+
+# ifndef ERROR_CAPACITY
+#  define ERROR_CAPACITY	3
+# endif
 
 typedef struct s_memarena	t_memarena;
 
