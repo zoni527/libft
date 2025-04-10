@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-int	ft_valid_multinumberstring(char *str)
+bool	ft_valid_multinumberstring(const char *str)
 {
 	int	sign;
 
 	if (*str == '\0')
-		return (0);
+		return (false);
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	if (!*str)
-		return (0);
+		return (false);
 	while (*str)
 	{
 		sign = 1;
@@ -29,14 +29,14 @@ int	ft_valid_multinumberstring(char *str)
 			if (*(str++) == '-')
 				sign = -1;
 		if (!ft_isdigit(*str))
-			return (0);
+			return (false);
 		if ((sign > 0 && ft_atol(str) > INT_MAX)
 			|| (sign < 0 && ft_atol(str) > -(long)INT_MIN))
-			return (0);
+			return (false);
 		while (ft_isdigit(*str))
 			str++;
 		while (*str == ' ' || (*str >= 9 && *str <= 13))
 			str++;
 	}
-	return (1);
+	return (true);
 }

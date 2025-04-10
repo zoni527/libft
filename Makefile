@@ -105,7 +105,9 @@ SRC :=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c	ft_isascii.c \
 	ft_new_memarena.c	ft_ma_malloc.c		ft_ma_calloc.c		\
 	ft_free_memarena_exit.c	ft_free_memarena.c	ft_reset_memarena.c	\
 	\
-	ft_ma_strjoin.c	ft_ma_strdup.c	ft_ma_substr.c	ft_ma_split.c
+	ft_ma_strjoin.c	ft_ma_strdup.c	ft_ma_substr.c	ft_ma_split.c	\
+	\
+	ft_is_empty_string.c
 
 OBJ	:= $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 # ---------------------------------------------------------------------------- #

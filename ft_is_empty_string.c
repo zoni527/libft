@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_contains_duplicate_char.c                       :+:      :+:    :+:   */
+/*   ft_is_empty_string.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 11:13:30 by jvarila           #+#    #+#             */
-/*   Updated: 2025/03/20 12:18:56 by jvarila          ###   ########.fr       */
+/*   Created: 2025/04/10 10:26:07 by jvarila           #+#    #+#             */
+/*   Updated: 2025/04/10 10:26:49 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_contains_duplicate_char(const char *str)
+bool	ft_is_empty_string(const char *str)
 {
-	if (!str)
-		return (false);
-	while (*str)
-	{
-		if (ft_strchr(str + 1, *str))
-			return (true);
-		str++;
-	}
+	if (str && str[0] == '\0')
+		return (true);
 	return (false);
 }

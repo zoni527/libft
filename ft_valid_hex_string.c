@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-int	ft_valid_hex_string(const char *str)
+bool	ft_valid_hex_string(const char *str)
 {
 	int	i;
 
 	if (!str || !*str)
-		return (0);
+		return (false);
 	str = ft_skip_whitespace(str);
 	if (*str != '0' || !(*(str + 1) == 'x' || *(str + 1) == 'X')
 		|| *(str + 2) == '\0')
-		return (0);
+		return (false);
 	str += 2;
 	i = 0;
 	while (str[i] && (ft_strchr(HEX_BASE_UPPER_CASE, str[i])
@@ -29,6 +29,6 @@ int	ft_valid_hex_string(const char *str)
 		i++;
 	str = ft_skip_whitespace(&str[i]);
 	if (!*str)
-		return (1);
-	return (0);
+		return (true);
+	return (false);
 }
