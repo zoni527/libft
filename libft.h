@@ -194,6 +194,10 @@ long int		ft_atol(const char *nptr);
 unsigned int	ft_atou_base(const char *str, const char *base);
 unsigned int	ft_atohex(const char *str);
 
+/* -------------------------------------------------------- string comparison */
+
+int				ft_strcmp(const char *s1, const char *s2);
+
 /* ------------------------------- Numbers ---------------------------------- */
 /* ------------------------------------------------------------ number output */
 
