@@ -215,7 +215,7 @@ int				ft_ulong_hex_digits(unsigned long n);
 /* ----------------------------------------------------------- return helpers */
 
 int				ft_free_ptr_return_int(void **ptr_to_ptr, int i);
-int				ft_write_error_return_int(char *error_message, \
+int				ft_write_error_return_int(char *error_message,\
 								int return_value);
 void			*ft_write_error_return_null(char *error_message);
 
@@ -293,10 +293,10 @@ void			*ft_free_memarena(t_memarena *arena);
 void			ft_reset_memarena(t_memarena *arena);
 void			*ft_ma_malloc(t_memarena *arena, size_t bytes_required);
 
-char			*ft_ma_strjoin(t_memarena *arena, char const *s1, \
+char			*ft_ma_strjoin(t_memarena *arena, char const *s1,\
 							char const *s2);
 char			*ft_ma_strdup(t_memarena *arena, const char *s);
-char			*ft_ma_substr(t_memarena *arena, char const *s, \
+char			*ft_ma_substr(t_memarena *arena, char const *s,\
 								unsigned int start, size_t len);
 char			**ft_ma_split(t_memarena *arena, char const *s, char c);
 
