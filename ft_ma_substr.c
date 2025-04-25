@@ -12,8 +12,8 @@
 
 #include "libft.h"
 
-char	*ft_ma_substr(t_memarena *arena, char const *s,\
-						unsigned int start, size_t len)
+char	*ft_ma_substr(t_memarena *arena, char const *s,
+			unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	s_len;

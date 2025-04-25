@@ -127,7 +127,8 @@ $(OBJ_DIR):
 clean:
 	rm -rf $(OBJ_DIR)
 
-fclean: clean
+fclean:
+	rm -rf $(OBJ_DIR)
 	rm -f $(NAME)
 
 re: fclean all
