@@ -172,6 +172,7 @@ bool			ft_valid_multinumberstring(const char *str);
 bool			ft_valid_hex_string(const char *str);
 
 bool			ft_is_empty_string(const char *str);
+bool			ft_is_whitespace_string(const char *str);
 
 /* ---------------------------------------------------------- string analysis */
 

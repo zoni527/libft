@@ -108,6 +108,7 @@ SRC :=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c	ft_isascii.c \
 	ft_ma_strjoin.c	ft_ma_strdup.c	ft_ma_substr.c	ft_ma_split.c	\
 	\
 	ft_is_empty_string.c \
+	ft_is_whitespace_string.c \
 	\
 	ft_strcmp.c
 
