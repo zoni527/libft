@@ -138,14 +138,14 @@ char			*strjoin_and_free(char *s1, char *s2);
 # endif
 
 int				ft_printf(const char *format_str, ...);
-int				handle_c(const char **format_str_ptr, va_list ap);
-int				handle_s(const char **format_str_ptr, va_list ap);
-int				handle_p(const char **format_str_ptr, va_list ap);
-int				handle_d(const char **format_str_ptr, va_list ap);
-int				handle_i(const char **format_str_ptr, va_list ap);
-int				handle_u(const char **format_str_ptr, va_list ap);
-int				handle_hex_lowercase(const char **format_str_ptr, va_list ap);
-int				handle_hex_uppercase(const char **format_str_ptr, va_list ap);
+int				handle_c(const char **format_str_ptr, va_list *ap);
+int				handle_s(const char **format_str_ptr, va_list *ap);
+int				handle_p(const char **format_str_ptr, va_list *ap);
+int				handle_d(const char **format_str_ptr, va_list *ap);
+int				handle_i(const char **format_str_ptr, va_list *ap);
+int				handle_u(const char **format_str_ptr, va_list *ap);
+int				handle_hex_lowercase(const char **format_str_ptr, va_list *ap);
+int				handle_hex_uppercase(const char **format_str_ptr, va_list *ap);
 
 /* ============================== ADDITIONS ================================= */
 
