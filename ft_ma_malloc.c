@@ -40,7 +40,7 @@ void	*ft_ma_malloc(t_memarena *arena, size_t bytes_required)
 		if (!arena->next)
 			arena->next = ft_new_memarena();
 		if (!arena->next)
-			ft_free_memarena_exit(initial_arena, MSG_ERROR_ALLOC);
+			return (NULL);
 		arena = arena->next;
 		bytes_available = arena->capacity - arena->bytes_used;
 	}
