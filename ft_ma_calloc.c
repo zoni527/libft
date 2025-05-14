@@ -25,7 +25,6 @@
  */
 void	*ft_ma_calloc(t_memarena *arena, size_t nmemb, size_t size)
 {
-	t_memarena	*initial_arena;
 	void		*ptr;
 	size_t		bytes_required;
 	size_t		bytes_available;
@@ -36,7 +35,6 @@ void	*ft_ma_calloc(t_memarena *arena, size_t nmemb, size_t size)
 	if (bytes_required > arena->capacity)
 		ft_free_memarena_exit(arena, MSG_ERROR_CAPACITY);
 	bytes_available = arena->capacity - arena->bytes_used;
-	initial_arena = arena;
 	while (bytes_available < bytes_required)
 	{
 		if (!arena->next)
