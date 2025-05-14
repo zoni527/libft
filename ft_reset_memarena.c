@@ -22,7 +22,7 @@ void	ft_reset_memarena(t_memarena *arena)
 {
 	if (arena->next)
 		ft_free_memarena(arena->next);
-	ft_memset(arena->heap_memory, 0, MEM_ARENA_SIZE);
+	ft_bzero(arena->heap_memory, MEM_ARENA_SIZE);
 	arena->capacity = MEM_ARENA_SIZE;
 	arena->bytes_used = 0;
 	arena->next = NULL;
