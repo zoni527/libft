@@ -62,7 +62,7 @@ SRC :=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c	ft_isascii.c \
 	\
 	ft_printf.c					\
 	handle_c.c	handle_s.c	handle_p.c	\
-	handle_d.c	handle_i.c	handle_u.c	\
+	handle_d.c	handle_u.c	\
 	handle_hex_lowercase.c	handle_hex_uppercase.c	\
 	\
 	ft_putstr.c	ft_putchar.c	ft_putendl.c \
