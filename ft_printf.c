@@ -54,8 +54,10 @@ static int	handle_conversion(const char **format_str_ptr, va_list *ap, char c)
 		return (handle_s(format_str_ptr, ap));
 	else if (c == 'p')
 		return (handle_p(format_str_ptr, ap));
-	else if (c == 'd' || c == 'i')
+	else if (c == 'd')
 		return (handle_d(format_str_ptr, ap));
+	else if (c == 'i')
+		return (handle_i(format_str_ptr, ap));
 	else if (c == 'u')
 		return (handle_u(format_str_ptr, ap));
 	else if (c == 'x')
@@ -75,7 +77,7 @@ static int	handle_conversion(const char **format_str_ptr, va_list *ap, char c)
 // of valid conversions.
 static char	next_conversion_type(const char *format_str)
 {
-	if (ft_strchr(FT_PRINTF_CONVERSION_SET, *(++format_str)))
+	if (ft_strchr(CONVERSION_SET, *(++format_str)))
 		return (*format_str);
 	return ('\0');
 }
