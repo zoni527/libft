@@ -6,7 +6,7 @@
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:58:39 by jvarila           #+#    #+#             */
-/*   Updated: 2024/11/12 11:52:31 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/06/08 12:54:14 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,17 @@ int	ft_atoi(const char *nptr)
 		return (0);
 	num = 0;
 	sign = 1;
-	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
+	nptr = ft_skip_whitespace(nptr);
 	if (*nptr == '-' || *nptr == '+')
 		if (*(nptr++) == '-')
 			sign = -1;
-	while (*nptr >= '0' && *nptr <= '9')
+	while (ft_isdigit(*nptr))
 	{
-		num = num * 10 + *(nptr++) - '0';
-		if (num < 0 && sign > 0)
+		if (sign > 0 && num > (LONG_MAX - (*nptr - '0')) / 10)
 			return ((int)LONG_MAX);
-		if (num < 0 && sign < 0)
+		if (sign < 0 && num > -(((*nptr - '0') + LONG_MIN) / 10))
 			return ((int)LONG_MIN);
+		num = num * 10 + *(nptr++) - '0';
 	}
 	return (sign * (int)num);
 }
